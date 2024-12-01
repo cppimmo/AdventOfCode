@@ -51,6 +51,12 @@ namespace AOC
 	using Coord = std::pair<int, int>;        // For 2D grid coordinates
 	using Path = std::vector<Coord>;          // Sequence of coordinates
 
+	inline void EnableFastIO(void)
+	{
+		std::ios_base::sync_with_stdio(false);
+		std::cin.tie(nullptr);
+	}
+	
 	class Timer
 	{
 	private:
@@ -66,7 +72,7 @@ namespace AOC
 		{
 			auto end = Clock::now();
 			auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - m_start);
-			std::cout << name << " took " << duration.count() << " µs" << std::endl;
+			std::cout << m_name << " took " << duration.count() << " µs" << std::endl;
 		}
 	};
 } // End namespace (AOC)
